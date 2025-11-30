@@ -1,0 +1,10 @@
+﻿Responsabilidade:
+Consumir eventos da fila e enviar/registrar notificações.
+Eventos que ele processa (exemplo):
+PixCompleted
+TransactionCreated
+
+Ações:
+
+“Enviar e-mail” (pode só logar numa tabela ou console pra estudo)
+Guardar log de notificação em DB

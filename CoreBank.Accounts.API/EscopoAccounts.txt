@@ -1,0 +1,11 @@
+﻿Responsabilidade:
+Abertura de conta, dados da conta (agência, número, status).
+
+Endpoints principais:
+
+POST /accounts
+body: customerId, tipo de conta, etc.
+GET /accounts/{id} – detalhes da conta
+GET /accounts/by-customer/{customerId} – todas as contas do cliente
+(Opcional) PATCH /accounts/{id}/status – ativa/bloqueia conta
+Não calcula saldo – só gerencia a “casca” da conta.

@@ -1,0 +1,8 @@
+﻿Responsabilidade:
+Login, emissão de JWT, validação de usuário.
+
+Endpoints principais:
+
+POST /auth/register – cria usuário (dev/cliente, como você decidir)
+POST /auth/login – recebe email/senha e devolve JWT
+GET /auth/me – retorna dados do usuário logado (usando JWT)

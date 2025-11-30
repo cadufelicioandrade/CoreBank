@@ -1,0 +1,14 @@
+﻿Responsabilidade:
+Registrar lançamentos (crédito/débito), saldo e extrato.
+
+Endpoints principais:
+
+POST /transactions
+body: accountId, type (Credit/Debit), amount, operation, correlationId
+GET /accounts/{accountId}/balance – saldo atual
+GET /accounts/{accountId}/statement?from=&to= – extrato com filtro de datas
+
+Aqui você já aplica:
+
+Idempotência via correlationId
+Projeção de saldo em tabela AccountBalance (CQRS leve)

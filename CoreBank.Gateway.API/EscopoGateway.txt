@@ -1,0 +1,11 @@
+﻿Bank.Gateway.Api (usando YARP ou Ocelot)
+
+Responsabilidade:
+Ser a porta única do front:
+Recebe requisições dos clientes
+Valida JWT
+Roteia para:
+Customers
+Accounts
+Ledger
+Pix

@@ -1,0 +1,9 @@
+﻿Responsabilidade:
+Cadastro e consulta de clientes (dados pessoais).
+
+Endpoints principais:
+
+POST /customers – cria cliente
+GET /customers/{id} – busca cliente por ID
+GET /customers?cpf=... – busca por CPF
+(Opcional) PUT /customers/{id} – atualiza dados

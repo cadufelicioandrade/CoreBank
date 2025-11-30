@@ -1,0 +1,13 @@
+﻿Responsabilidade:
+Gerenciar chaves PIX e orquestrar transferência.
+
+Endpoints principais:
+
+POST /pix/keys – registra chave PIX
+body: accountId, keyType (CPF, EMAIL, RANDOM), keyValue
+GET /pix/keys/{keyValue} – resolve chave → accountId
+POST /pix/transfer
+body: fromAccountId, toPixKey, amount, idempotencyKey
+Internamente, o Pix Service chama o Ledger (HTTP ou fila) para lançar:
+Débito (PIX_OUT) na conta origem
+Crédito (PIX_IN) na conta destino
