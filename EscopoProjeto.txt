@@ -1,0 +1,5 @@
+CoreBank.Ledger ? movimentações, lançamentos contábeis
+CoreBank.Accounts ? contas correntes
+CoreBank.Customers ? clientes
+CoreBank.Transfers ? TED/PIX/entre contas
+CoreBank.Notifications ? e-mail, SMS, push

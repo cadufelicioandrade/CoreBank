@@ -6,7 +6,6 @@ C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Co
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\CoreBank.Ledger.API.runtimeconfig.json
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\CoreBank.Ledger.API.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\CoreBank.Ledger.API.pdb
-C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\HealthChecks.SqlServer.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Humanizer.dll
@@ -22,6 +21,7 @@ C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Mi
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -138,3 +138,4 @@ C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\obj\Debug\net8.0\re
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\obj\Debug\net8.0\CoreBank.Ledger.API.pdb
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\obj\Debug\net8.0\CoreBank.Ledger.API.genruntimeconfig.cache
 C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\obj\Debug\net8.0\ref\CoreBank.Ledger.API.dll
+C:\Users\Carlos Eduardo\Desktop\CoreBank\CoreBank.Ledger.API\bin\Debug\net8.0\FluentValidation.dll
