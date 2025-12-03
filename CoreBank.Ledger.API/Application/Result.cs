@@ -19,15 +19,12 @@
         // Versões SEM payload
         // ==========================
 
-        // Sucesso sem retorno
         public static Result Success()
             => new Result(true, null);
-
-        // Falha sem retorno
+        
         public static Result Fail(string error)
             => new Result(false, error);
 
-        // Alias mais “natural” para sucesso (igual usamos no service)
         public static Result Ok()
             => Success();
 

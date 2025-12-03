@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|solutionrelative:corebank.ledger.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\application\\services\\ledgerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|solutionrelative:corebank.ledger.api\\application\\services\\ledgerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\application\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|solutionrelative:corebank.ledger.api\\application\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\application\\services\\ledgerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|solutionrelative:corebank.ledger.api\\application\\services\\ledgerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|solutionrelative:corebank.ledger.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34E2A3EC-864E-4AFA-8E41-E67AE860E424}|CoreBank.Ledger.API\\CoreBank.Ledger.API.csproj|c:\\users\\carlos eduardo\\desktop\\corebank\\corebank.ledger.api\\application\\services\\iledgerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\CoreBank.Ledger.API\\Program.cs",
               "RelativeDocumentMoniker": "CoreBank.Ledger.API\\Program.cs",
               "ToolTip": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\CoreBank.Ledger.API\\Program.cs",
               "RelativeToolTip": "CoreBank.Ledger.API\\Program.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAowCkAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowCIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T01:05:38.168Z",
               "EditorCaption": ""
@@ -49,20 +49,20 @@
               "RelativeDocumentMoniker": "CoreBank.Ledger.API\\Application\\Result.cs",
               "ToolTip": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\CoreBank.Ledger.API\\Application\\Result.cs",
               "RelativeToolTip": "CoreBank.Ledger.API\\Application\\Result.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAUwDcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T00:55:21.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LedgerService.cs",
               "DocumentMoniker": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\CoreBank.Ledger.API\\Application\\Services\\LedgerService.cs",
               "RelativeDocumentMoniker": "CoreBank.Ledger.API\\Application\\Services\\LedgerService.cs",
               "ToolTip": "C:\\Users\\Carlos Eduardo\\Desktop\\CoreBank\\CoreBank.Ledger.API\\Application\\Services\\LedgerService.cs",
               "RelativeToolTip": "CoreBank.Ledger.API\\Application\\Services\\LedgerService.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAowKkAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAgwGwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T00:54:54.429Z",
               "EditorCaption": ""
@@ -77,8 +77,7 @@
               "RelativeToolTip": "CoreBank.Ledger.API\\Application\\Services\\ILedgerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T00:54:39.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T00:54:39.318Z"
             }
           ]
         }

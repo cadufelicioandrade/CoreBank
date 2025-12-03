@@ -1,11 +1,11 @@
-﻿using CoreBank.Ledger.API.Application;              // <= IMPORTANTE para enxergar Result/Result<T>
-using CoreBank.Ledger.API.Application.DTO;
+﻿using CoreBank.Ledger.API.Application.DTO;
 using CoreBank.Ledger.API.Application.Interfaces;
 using CoreBank.Ledger.API.Domain.Entities;
 using CoreBank.Ledger.API.Domain.Enums;
 using CoreBank.Ledger.API.Domain.Events;
 using CoreBank.Ledger.API.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace CoreBank.Ledger.API.Application.Services
 {
@@ -38,16 +38,14 @@ namespace CoreBank.Ledger.API.Application.Services
 
         public async Task<Result<TransactionResponse>> CreateAsync(
             CreateTransactionRequest request,
-            CancellationToken ct = default)
+            CancellationToken cancellation = default)
         {
-            // 1) Validação simples de entrada
             if (request.Amount <= 0)
                 return Result.Fail<TransactionResponse>("Amount must be greater than zero.");
 
             if (string.IsNullOrWhiteSpace(request.AccountNumber))
                 return Result.Fail<TransactionResponse>("AccountNumber is required.");
 
-            // 2) Converte string de tipo para enum
             var type = request.Type.ToUpperInvariant() switch
             {
                 "CREDIT" => TransactionType.Credit,
@@ -58,19 +56,19 @@ namespace CoreBank.Ledger.API.Application.Services
             if (type is null)
                 return Result.Fail<TransactionResponse>("Invalid transaction type. Use CREDIT or DEBIT.");
 
-            // 3) Idempotência: verifica se já existe RequestId + Endpoint
+            // Idempotência: verifica se já existe RequestId + Endpoint (ex: usuário clicou várias vezes no botão de enviar)
             var existingIdempotent = await _db.IdempotentRequests
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x =>
                     x.Id == request.RequestId &&
-                    x.Endpoint == CreateTransactionEndpoint, ct);
+                    x.Endpoint == CreateTransactionEndpoint, cancellation);
 
             if (existingIdempotent is not null)
             {
-                // Se já existe, buscamos a transação associada e devolvemos
+                // Se já existe, busca a transação associada 
                 var existingTransaction = await _db.Transactions
                     .AsNoTracking()
-                    .FirstOrDefaultAsync(t => t.Id == existingIdempotent.TransactionId, ct);
+                    .FirstOrDefaultAsync(t => t.Id == existingIdempotent.TransactionId, cancellation);
 
                 if (existingTransaction is null)
                 {
@@ -90,16 +88,20 @@ namespace CoreBank.Ledger.API.Application.Services
                 return Result.Ok(MapToResponse(existingTransaction));
             }
 
-            // 4) Cria a entidade de transação em memória
+            //Cria a entidade LedgerTransaction de transação em memória
             var transaction = LedgerTransaction.Create(
                 request.AccountNumber,
                 request.Amount,
                 type.Value);
 
-            // 5) (opcional) altera status, saldo, etc.
+            // Por que marcar como COMPLETED?
+            //Porque, no modelo atual do seu ledger, toda transação criada já nasce concluída.
+            //Ela não passa por etapas intermediárias como:
+            //PENDING,IN_REVIEW,FAILED,AUTHORIZED / CAPTURED
+            //EVOLUIR ISSO MAIS PRA FRENTE!
             transaction.MarkAsCompleted();
 
-            // 6) Adiciona evento de domínio para ser disparado depois
+            //Adiciona evento de domínio para ser disparado depois
             var domainEvent = new TransactionCreatedDomainEvent(
                 transaction.Id,
                 transaction.AccountNumber,
@@ -108,8 +110,8 @@ namespace CoreBank.Ledger.API.Application.Services
 
             transaction.AddDomainEvent(domainEvent);
 
-            // 7) Transação explícita do EF
-            await using var dbTransaction = await _db.Database.BeginTransactionAsync(ct);
+            //BeginTransaction explícito do EF
+            await using var dbTransaction = await _db.Database.BeginTransactionAsync(cancellation);
 
             try
             {
@@ -122,18 +124,18 @@ namespace CoreBank.Ledger.API.Application.Services
 
                 _db.IdempotentRequests.Add(idem);
 
-                await _db.SaveChangesAsync(ct);
-                await dbTransaction.CommitAsync(ct);
+                await _db.SaveChangesAsync(cancellation);
+                await dbTransaction.CommitAsync(cancellation);
             }
             catch (Exception ex)
             {
-                await dbTransaction.RollbackAsync(ct);
+                await dbTransaction.RollbackAsync(cancellation);
                 _logger.LogError(ex, "Error while creating ledger transaction.");
                 return Result.Fail<TransactionResponse>("An unexpected error occurred.");
             }
 
-            // 8) Dispara eventos de domínio (pós-commit)
-            await _domainEventsDispatcher.DispatchAsync(transaction.DomainEvents, ct);
+            // Dispara eventos de domínio (pós-commit), para mensageria, avisar outro serviço, Kafka, Redis, email, saldo, fraude…
+            await _domainEventsDispatcher.DispatchAsync(transaction.DomainEvents, cancellation);
             transaction.ClearDomainEvents();
 
             // 9) Loga sucesso
